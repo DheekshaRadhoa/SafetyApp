@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   },
   btncontainer: {
     bottom: 0,
-    backgroundColor : 'red'
 
   },
   navigation_btn:{
@@ -20,7 +19,20 @@ const styles = StyleSheet.create({
     bottom:20,
     position: 'absolute',
     justifyContent: 'space-between',
-  }
+  },
+
+  register_container:{
+    display:'flex',
+    flexDirection:'column',
+    marginTop:'10%',
+   },
+   register_input:{
+     display:'flex',
+     flexDirection:'column',
+     height:90,
+     alignSelf: 'center',
+
+   }
 })
 
 export default styles;

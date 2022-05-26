@@ -1,39 +1,70 @@
-
 import React from 'react';
-import { StyleSheet, Text, View , Button , TouchableOpacity} from 'react-native';
-import styles from '../styles/Styles';
+import { Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+
+const windowHeight = Dimensions.get('window').height;
+const windowWidth = Dimensions.get('window').width;
+
 export default function Alarm({navigation}) {
   return (
-    <View style={styles.container}>
+    <View View style={styles.screen}>
         <View>
-          <TouchableOpacity
-            onPress={() => alert('Alert sent')}
-            style={{ backgroundColor: 'blue',height:250 , width:250, marginTop:250,borderRadius:30, justifyContent:"space-evenly" , }}>
-            <Text style={{ fontSize: 26, color: '#fff' ,textAlign:"center" }}>Raise an alarm</Text>
-          </TouchableOpacity>
+            <Text>
+              Some Text
+            </Text>
         </View>
-    
-    <View style={styles.btn_navigation}>
-      
-
-      <TouchableOpacity 
-        title="Previous" 
-        onPress={() => navigation.goBack()}
-        style={styles.navigation_btn}
-      >
-      <Text style={{ fontSize: 16, color: '#fff' ,textAlign:"center" }}>Previous</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Location')}
-        style={styles.navigation_btn}
-      >
-      <Text style={{ fontSize: 16, color: '#fff' ,textAlign:"center" }}>Go to location</Text>
-      </TouchableOpacity>
+​
+        <View>
+            <TouchableOpacity onPress={() => alert('Successful')} style={styles.AlarmBtn}>
+                <Text style={styles.AlarmText}>Raise an alarm</Text>
+            </TouchableOpacity>
+        </View>
+​
+        <View style={styles.smallBtns}>
+            <TouchableOpacity onPress={() => navigation.goBack()} style={[styles.roundButton, {backgroundColor: 'gray'}]}>
+                <Text style={styles.AlarmText}>Back</Text>
+            </TouchableOpacity>
+​
+            <TouchableOpacity onPress={() => navigation.navigate('Location')} style={[styles.roundButton, {backgroundColor: '#77D44D'}]}>
+                <Text style={styles.AlarmText}>Go to ping location</Text>
+            </TouchableOpacity>
+        </View>
+​
     </View>
-
-      
-    </View>
-
-  );
+);
 }
+const styles = StyleSheet.create({
+  screen:{
+      flexDirection: "column",
+      justifyContent: "space-evenly",
+      alignItems: "center",
+      height: windowHeight
+  },
+  AlarmBtn: {
+      alignSelf: "center",
+      backgroundColor: '#2898F3',
+      height:250 ,
+      width:250,
+      borderRadius:40,
+      justifyContent: "center",
+  },
+  AlarmText: {
+      fontSize: 26,
+      color: '#fff',
+      alignItems: "center" ,
+      textAlign:"center"
+  },
+  smallBtns: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      margin: 10,
+      padding: 10,
+      width: windowWidth,
+  },
+  roundButton: {
+      width: 125,
+      height: 125,
+      borderRadius: 50,
+      justifyContent: 'center',
+  }
+});
