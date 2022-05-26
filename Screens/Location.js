@@ -1,35 +1,38 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
+import bullet from '@jsamr/counter-style/presets/disc';
+import MarkedList from '@jsamr/react-native-li';
 
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 
 export default function Location({navigation}) {
   return (
-    <View View style={styles.screen}>
+    <View style={styles.screen}>
         <View>
-            <Text>
-              Some Text
-            </Text>
+            <MarkedList counterRenderer={bullet}>
+                <Text>Ping your location</Text>
+                <Text>Send location to contacts</Text>
+            </MarkedList>
         </View>
-​
+
         <View>
             <TouchableOpacity onPress={() => alert('Successful')} style={styles.LocationBtn}>
                 <Text style={styles.LocationText}>Ping location</Text>
             </TouchableOpacity>
         </View>
-​
+
         <View style={styles.smallBtns}>
             <TouchableOpacity onPress={() => navigation.goBack()} style={[styles.roundButton, {backgroundColor: 'gray'}]}>
                 <Text style={styles.LocationText}>Back</Text>
             </TouchableOpacity>
-​
+
             <TouchableOpacity onPress={() => navigation.navigate('Hotline')} style={[styles.roundButton, {backgroundColor: '#FFA07A'}]}>
                 <Text style={styles.LocationText}>Go to Hotline</Text>
             </TouchableOpacity>
         </View>
-​
+
     </View>
 );
 }
@@ -42,7 +45,7 @@ const styles = StyleSheet.create({
   },
   LocationBtn: {
       alignSelf: "center",
-      backgroundColor: '#77D44D',
+      backgroundColor: '#55C133',
       height:250 ,
       width:250,
       borderRadius:40,
@@ -66,5 +69,10 @@ const styles = StyleSheet.create({
       height: 125,
       borderRadius: 50,
       justifyContent: 'center',
-  }
+  },
+  Text:{
+    fontSize: 22,
+    textAlign:'left',
+    width:250
+  },
 });

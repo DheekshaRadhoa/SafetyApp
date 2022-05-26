@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "saviour",
-    "slug": "snack-280b7b6b-378a-4137-99a6-55906f169783",
+    "slug": "saviour-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,8 +24,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.dheeksharadhoa"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

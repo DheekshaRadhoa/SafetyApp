@@ -25,12 +25,17 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection:'column',
     marginTop:'10%',
+    justifyContent: 'center'
    },
+
    register_input:{
      display:'flex',
      flexDirection:'column',
-     height:90,
-     alignSelf: 'center',
+     height:100,
+    //  alignContent: 'center',
+      // justifyContent: 'center'
+      // textAlign: 'center'
+      // textAlignVertical: 'center'
 
    }
 })
